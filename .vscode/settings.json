@@ -1,0 +1,40 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.eol": "\n",
+
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 80,
+  "prettier.bracketSameLine": true,
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "prettier.singleAttributePerLine": false,
+  "prettier.proseWrap": "always",
+
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "same",
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "prettier.requireConfig": true,
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "emmet.includeLanguages": {
+    "vue": "html",
+    "javascript": "javascriptreact"
+  }
+}
