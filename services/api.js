@@ -6,14 +6,12 @@ const useApi = () => {
   const { $axios } = useNuxtApp();
 
   return {
-    thirdPartyService: {
-      getData: (params) => $axios.thirdParty.get('/data', { params }),
-      postData: (data) => $axios.thirdParty.post('/data', data)
-    },
-
-    myService: {
-      getData: (params) => $axios.myApi.get('/', { params }),
-      postData: (data) => $axios.myApi.post('/data', data)
+    staticDataService: {
+      getData: (params) =>
+        $axios.staticDataApi.get('', {
+          params
+        }),
+      postData: (data) => $axios.staticDataApi.post('/data', data)
     }
   };
 };

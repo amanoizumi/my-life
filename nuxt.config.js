@@ -7,11 +7,20 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxt/icon', '@vueuse/nuxt'],
   devtools: { enabled: true },
   ssr: false,
-  css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    public: {
+      tdx: {
+        apiUrl: process.env.NUXT_TDX_API_URL,
+        apiKey: process.env.NUXT_TDX_API_KEY,
+        apiId: process.env.NUXT_TDX_API_ID
+      }
+    }
+  },
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {}
     }
-  }
+  },
+  plugins: []
 });

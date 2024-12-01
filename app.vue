@@ -25,13 +25,6 @@ import useApi from '~/services/api';
 
 const api = useApi();
 
-try {
-  const response = await api.myService.getData();
-  console.log('res', response);
-} catch (error) {
-  console.error('Error fetching bonus data:', error);
-}
-
 const store = useCounterStore();
 // 使用 storeToRefs 來保持響應性
 const { count, doubleCount } = storeToRefs(store);
@@ -40,4 +33,6 @@ const { increment, decrement } = store;
 // VueUse 的函數可以直接使用，不需要 import
 const { x, y } = useMouse();
 const isDark = useDark();
+const res = await api.staticDataService.getData();
+console.log('res', res);
 </script>
