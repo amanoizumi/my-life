@@ -40,6 +40,9 @@ const { increment, decrement } = store;
 const { x, y } = useMouse();
 const res = await api.staticDataService.getData();
 
+// const daysjs = useDayjs();
+// console.log('daysjs', daysjs);
+
 console.log('res', res);
 
 const now = useNow({

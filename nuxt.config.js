@@ -19,7 +19,8 @@ export default defineNuxtConfig({
         apiUrl: process.env.NUXT_TDX_API_URL,
         apiKey: process.env.NUXT_TDX_API_KEY,
         apiId: process.env.NUXT_TDX_API_ID
-      }
+      },
+      jsonBin: process.env.NUXT_JSON_BIN_API_KEY
     }
   },
   postcss: {
