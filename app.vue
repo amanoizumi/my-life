@@ -15,6 +15,9 @@
         <p>Mouse position: {{ x }}, {{ y }}</p>
         <p>Is dark: {{ isDark }}</p>
       </div>
+      <div>
+        {{ now }}
+      </div>
     </div>
   </div>
 </template>
@@ -35,4 +38,8 @@ const { x, y } = useMouse();
 const isDark = useDark();
 const res = await api.staticDataService.getData();
 console.log('res', res);
+
+const now = useNow({
+  interval: 1000 // 每秒更新一次
+});
 </script>
