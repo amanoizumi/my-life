@@ -4,7 +4,13 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['stores']
   },
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxt/icon', '@vueuse/nuxt'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    '@nuxt/icon',
+    '@vueuse/nuxt',
+    'dayjs-nuxt'
+  ],
   devtools: { enabled: true },
   ssr: false,
   runtimeConfig: {
