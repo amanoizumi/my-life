@@ -15,6 +15,7 @@ module.exports = {
     'comma-dangle': 'off',
     semi: ['error', 'always'],
     'arrow-parens': ['error', 'always'],
-    'no-console': 'off'
+    'no-console': 'off',
+    'vue/no-v-model-argument': 'off'
   }
 };

@@ -1,13 +1,18 @@
 <template>
-  <div>
+  <div class="container">
     <p>Index</p>
 
     <div>
       <button class="btn">Hello daisyUI</button>
       <p>Count: {{ count }}</p>
       <p>Double: {{ doubleCount }}</p>
-      <button @click="increment">+1</button>
-      <button @click="decrement">-1</button>
+      <button
+        class="px-4 py-1 bg-indigo-500 mr-2"
+        type="button"
+        @click="increment">
+        +1
+      </button>
+      <button class="px-4 py-1 bg-indigo-500" @click="decrement">-1</button>
       <Icon
         name="material-symbols:family-star-sharp"
         class="text-2xl text-indigo-600" />
