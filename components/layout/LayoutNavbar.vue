@@ -26,8 +26,12 @@
         <div class="hidden flex-none lg:block">
           <ul class="menu menu-horizontal">
             <!-- Navbar menu content here -->
-            <li><a>Navbar Item 1</a></li>
-            <li><a>Navbar Item 2</a></li>
+            <li>
+              <NuxtLink to="/">Home Page</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/play-ground">Play Ground</NuxtLink>
+            </li>
           </ul>
         </div>
       </div>
