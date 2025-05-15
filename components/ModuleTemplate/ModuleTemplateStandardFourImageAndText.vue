@@ -2,7 +2,10 @@
   <div>
     <div class="flex justify-between">
       <h2 class="text-xl font-semibold">Standard Four Image & Text</h2>
-      <button type="button" class="btn btn-circle leading-none w-7 h-7 m-1">
+      <button
+        type="button"
+        class="btn btn-circle leading-none w-7 h-7 m-1"
+        @click="closeEditor">
         x
       </button>
     </div>
@@ -77,4 +80,10 @@
 import { useModuleTemplateStandardFourImageAndTextStore } from '~/stores/blockModules/moduleTemplateStandardFourImageAndText.js';
 
 const store = useModuleTemplateStandardFourImageAndTextStore();
+const moduleListStore = useModuleListStore();
+
+const closeEditor = () => {
+  store.reset();
+  moduleListStore.currentSelectedModuleId = '';
+};
 </script>

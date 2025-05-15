@@ -3,7 +3,7 @@
     <h2 class="font-bold text-2xl mb-3">
       {{ store.headline }}
     </h2>
-    <ul class="grid grid-cols-4 gap-3">
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
       <li v-for="item in store.list" :key="item.order">
         <div class="card bg-base-100 shadow-sm h-full">
           <figure>
