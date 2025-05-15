@@ -52,7 +52,12 @@
         </div>
 
         <div class="modal-action">
-          <button class="btn btn-primary" @click="submit">Submit</button>
+          <button
+            class="btn btn-primary"
+            :disabled="!moduleRadioValue"
+            @click="submit">
+            Submit
+          </button>
           <form method="dialog">
             <button class="btn btn-outline">Close</button>
           </form>
