@@ -1,5 +1,5 @@
 <template>
-  <div class="py-10">
+  <div class="pt-10 pb-32">
     <section class="container mx-auto px-4 mb-4">
       <h2 class="text-3xl mb-4">Web Page Name - {{ webpageNane }}</h2>
       <div class="tabs tabs-lift">
