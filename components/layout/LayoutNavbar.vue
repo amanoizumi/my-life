@@ -22,10 +22,9 @@
             </svg>
           </label>
         </div>
-        <div class="mx-2 flex-1 px-2">Navbar Title</div>
+        <div class="mx-2 flex-1 px-2">Play Web</div>
         <div class="hidden flex-none lg:block">
           <ul class="menu menu-horizontal">
-            <!-- Navbar menu content here -->
             <li>
               <NuxtLink to="/">Home Page</NuxtLink>
             </li>
@@ -35,7 +34,6 @@
           </ul>
         </div>
       </div>
-      <!-- Page content here -->
     </div>
     <div class="drawer-side">
       <label
@@ -43,9 +41,8 @@
         aria-label="close sidebar"
         class="drawer-overlay"></label>
       <ul class="menu bg-base-200 min-h-full w-80 p-4">
-        <!-- Sidebar content here -->
-        <li><a>Sidebar Item 1</a></li>
-        <li><a>Sidebar Item 2</a></li>
+        <li><NuxtLink to="/">Home Page</NuxtLink></li>
+        <li><NuxtLink to="/play-ground">Play Ground</NuxtLink></li>
       </ul>
     </div>
   </div>
