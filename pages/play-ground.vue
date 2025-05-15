@@ -45,6 +45,11 @@ import { storeToRefs } from 'pinia';
 
 const moduleListStore = useModuleListStore();
 const tab = ref('Editor');
+
+const toggleTab = (tabName = 'Editor') => {
+  tab.value = tabName;
+};
+
 const now = useNow({
   interval: 1000 // 每秒更新一次
 });
