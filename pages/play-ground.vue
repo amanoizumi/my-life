@@ -12,11 +12,9 @@
       </div>
     </section>
 
-    <section
-      class="container mx-auto px-4 mb-4"
-      v-if="!moduleListStore.currentSelectedModuleId">
+    <!-- <section v-if="!moduleListStore.currentSelectedModuleId">
       <emptyModuleSection />
-    </section>
+    </section> -->
 
     <section class="container mx-auto px-4 mb-4">
       <ModuleTemplateStandardFourImageAndText />
