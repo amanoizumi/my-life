@@ -16,7 +16,7 @@
           <input
             type="text"
             class="input"
-            v-model="headline"
+            v-model="moduleTemplateStandardFourImageAndTextStore.headline"
             id="standardFourImageAndTextTempalteInput"
             placeholder="Enter headline text" />
         </div>
@@ -27,7 +27,11 @@
     <!-- <pre>headline: {{ headline }}</pre>
     <pre>{{ list }}</pre> -->
     <ul class="grid grid-cols-4 gap-3" id="standardFourImageAndTextList">
-      <li v-for="(item, index) in list" :key="item.order">
+      <li
+        v-for="(
+          item, index
+        ) in moduleTemplateStandardFourImageAndTextStore.list"
+        :key="item.order">
         <div class="flex flex-col">
           <p class="text-lg">
             Image
@@ -38,7 +42,9 @@
               v-if="!item.imgUrl"
               class="border-black border-2 border-dashed bg-orange-300 mb-3 flex justify-center items-center aspect-square cursor-pointer"
               role="button"
-              @click="uploadImage">
+              @click="
+                useModuleTemplateStandardFourImageAndTextStore.uploadImage
+              ">
               <p>Click to add image</p>
             </div>
             <div v-else class="border-transparent border-2 mb-3 aspect-square">
@@ -75,39 +81,8 @@
   </div>
 </template>
 <script setup>
-const headline = ref('');
-const list = ref([
-  {
-    order: 1,
-    headline: 'Cat',
-    bodyText: 'Cute Cat',
-    imgUrl:
-      'https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=2630&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-  },
-  {
-    order: 2,
-    headline: 'Bird',
-    bodyText: 'Cute Bird',
-    imgUrl:
-      'https://plus.unsplash.com/premium_photo-1697263437649-3a008f45e46b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bmVzdHxlbnwwfHwwfHx8MA%3D%3D'
-  },
-  {
-    order: 3,
-    headline: 'Cockatiel',
-    bodyText: 'Ultra Cute Cockatiel',
-    imgUrl:
-      'https://images.unsplash.com/photo-1588156842490-8d7fdb1ce349?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-  },
-  {
-    order: 4,
-    headline: 'Crested Goshawk',
-    bodyText: 'Cool Crested Goshawk',
-    imgUrl:
-      'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQVfvf-8C9WL0l2bL3_cr_XbjsCIsrkzZgUQIfs295s1h5Z3Hs2hUA8bqv4esGiSILBikJhm9JhqEYtTlvEMbYarA'
-  }
-]);
+import { useModuleTemplateStandardFourImageAndTextStore } from '~/stores/blockModules/moduleTemplateStandardFourImageAndText.js';
 
-const uploadImage = () => {
-  console.log('uploadImage');
-};
+const moduleTemplateStandardFourImageAndTextStore =
+  useModuleTemplateStandardFourImageAndTextStore();
 </script>
