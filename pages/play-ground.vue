@@ -1,7 +1,8 @@
 <template>
   <div class="pt-10 pb-32">
+    <ImageUpload />
     <section class="container mx-auto px-4 mb-4">
-      <h2 class="text-3xl mb-4">Web Page Name - {{ webpageNane }}</h2>
+      <h2 class="text-3xl mb-4">Web Page Name - {{ webpageName }}</h2>
       <div class="tabs tabs-lift">
         <input
           type="radio"
@@ -45,7 +46,7 @@ import { useStorage } from '@vueuse/core';
 import { storeToRefs } from 'pinia';
 
 const moduleListStore = useModuleListStore();
-const webpageNane = ref('Animal Fes');
+const webpageName = ref('Animal Fes');
 const tab = ref('Editor');
 
 const toggleTab = (tabName = 'Editor') => {
