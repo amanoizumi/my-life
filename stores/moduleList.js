@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
 
-import StandardFourImageAndText from '~/components/ModuleTemplate/StandardFourImageAndText.vue';
+import StandardFourImageAndText from '~/components/ModuleTemplate/ModuleTemplateStandardFourImageAndText.vue';
 
 export const useModuleListStore = defineStore('moduleList', () => {
   const blocks = ref([

@@ -4,28 +4,38 @@
       <div class="tabs tabs-lift">
         <input
           type="radio"
+          v-model="tab"
+          value="Editor"
           name="editorTab"
           class="tab"
           aria-label="Editor"
           checked="checked" />
-        <input type="radio" name="editorTab" class="tab" aria-label="Preview" />
+        <input
+          v-model="tab"
+          value="Preview"
+          type="radio"
+          name="editorTab"
+          class="tab"
+          aria-label="Preview" />
       </div>
+    </section>
+
+    <section v-if="!moduleListStore.currentSelectedModuleId">
+      <emptyModuleSection />
     </section>
 
     <section
       class="container mx-auto px-4 mb-4"
-      v-if="!moduleListStore.currentSelectedModuleId">
-      <emptyModuleSection />
+      v-if="moduleListStore.currentSelectedModuleId"
+      v-show="tab === 'Editor'">
+      <component :is="moduleListStore.currentSelectedComponent" />
     </section>
 
-    <section class="container mx-auto px-4 mb-4">
-      <ModuleTemplateStandardFourImageAndText />
-    </section>
-    <!-- <section
+    <section
       class="container mx-auto px-4 mb-4"
-      v-if="moduleListStore.currentSelectedModuleId">
-      <component :is="moduleListStore.currentSelectedComponent" />
-    </section> -->
+      v-show="moduleListStore.currentSelectedModuleId && tab === 'Preview'">
+      <ModulePreviewStandardFourImageAndText />
+    </section>
   </div>
 </template>
 
@@ -34,7 +44,7 @@ import { useStorage } from '@vueuse/core';
 import { storeToRefs } from 'pinia';
 
 const moduleListStore = useModuleListStore();
-
+const tab = ref('Editor');
 const now = useNow({
   interval: 1000 // 每秒更新一次
 });
