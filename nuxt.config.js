@@ -4,8 +4,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   imports: {
-    dirs: ['stores']
+    dirs: ['stores', 'stores/**', 'composables', 'utils']
   },
+
   vite: {
     plugins: [tailwindcss()]
   },
