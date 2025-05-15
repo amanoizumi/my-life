@@ -1,5 +1,5 @@
 <template>
-  <section id="emptyModuleSection" class="container mx-auto px-4">
+  <div class="container mx-auto px-4">
     <div
       class="border border-dotted container py-8 flex justify-center items-center w-full">
       <button class="btn" @click="openModal">Add Module</button>
@@ -59,7 +59,7 @@
         </div>
       </div>
     </dialog>
-  </section>
+  </div>
 </template>
 
 <script setup>
@@ -76,7 +76,7 @@ const closeModal = () => {
 };
 
 const submit = () => {
-  console.log('submit!');
+  moduleListStore.currentSelectedModuleId = moduleRadioValue.value;
   closeModal();
 };
 </script>

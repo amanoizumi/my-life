@@ -12,15 +12,28 @@
       </div>
     </section>
 
-    <section>
+    <section
+      class="container mx-auto px-4 mb-4"
+      v-if="!moduleListStore.currentSelectedModuleId">
       <emptyModuleSection />
     </section>
+
+    <section class="container mx-auto px-4 mb-4">
+      <ModuleTemplateStandardFourImageAndText />
+    </section>
+    <!-- <section
+      class="container mx-auto px-4 mb-4"
+      v-if="moduleListStore.currentSelectedModuleId">
+      <component :is="moduleListStore.currentSelectedComponent" />
+    </section> -->
   </div>
 </template>
 
 <script setup>
 import { useStorage } from '@vueuse/core';
 import { storeToRefs } from 'pinia';
+
+const moduleListStore = useModuleListStore();
 
 const now = useNow({
   interval: 1000 // 每秒更新一次
