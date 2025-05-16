@@ -7,9 +7,9 @@
       v-for="item in store.list"
       :key="item.order"
       class="hero min-h-[600px]"
-      style="
-        background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);
-      ">
+      :style="{
+        backgroundImage: `url(${item.imgUrl})`
+      }">
       <div class="hero-overlay"></div>
       <div class="hero-content text-neutral-content text-center">
         <div class="max-w-md">

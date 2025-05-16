@@ -52,20 +52,10 @@ export const useModuleListStore = defineStore('moduleList', () => {
   });
 
   const currentSelectedComponent = computed(() => {
-    console.log(
-      'componentMap[moduleIdMapComponentName.value]',
-      componentMap[moduleIdMapComponentName.value]
-    );
-
     return componentMap[moduleIdMapComponentName.value];
   });
 
   const currentSelectedComponentPreview = computed(() => {
-    console.log(
-      'componentPreviewMap[moduleIdMapComponentName.value]',
-      componentPreviewMap[moduleIdMapComponentName.value]
-    );
-
     return componentPreviewMap[moduleIdMapComponentName.value];
   });
 
