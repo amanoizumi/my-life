@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container mx-auto px-4 mb-4">
     <h2 class="font-bold text-2xl mb-3">
       {{ store.headline }}
     </h2>

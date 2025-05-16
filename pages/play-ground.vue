@@ -33,9 +33,8 @@
     </section>
 
     <section
-      class="container mx-auto px-4 mb-4"
       v-show="moduleListStore.currentSelectedModuleId && tab === 'Preview'">
-      <ModulePreviewStandardFourImageAndText />
+      <component :is="moduleListStore.currentSelectedComponentPreview" />
     </section>
   </div>
 </template>

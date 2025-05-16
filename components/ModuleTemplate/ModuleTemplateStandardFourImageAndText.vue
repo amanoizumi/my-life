@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container mx-auto px-4 mb-4">
     <div class="flex justify-between">
       <h2 class="text-xl font-semibold">Standard Four Image & Text</h2>
       <button
@@ -64,12 +64,12 @@
           </div>
           <div>
             <label for="bodyText1">
-              <h3 class="text-lg font-medium">Body Text</h3>
+              <h3 class="text-lg font-medium w-full">Body Text</h3>
             </label>
             <textarea
               v-model="store.list[index].bodyText"
               type="text"
-              class="textarea"
+              class="textarea w-full"
               id="bodyText1"
               placeholder="Enter body text"></textarea>
           </div>

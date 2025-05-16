@@ -20,26 +20,8 @@ export const useModuleTemplateStandardImageAndDarkTextOverlay = defineStore(
     const list = ref([
       {
         order: 1,
-        headline: 'Cat',
+        headline: 'Cat2',
         bodyText: 'Cute Cat',
-        imgUrl: ''
-      },
-      {
-        order: 2,
-        headline: 'Bird',
-        bodyText: 'Cute Bird',
-        imgUrl: ''
-      },
-      {
-        order: 3,
-        headline: 'Cockatiel',
-        bodyText: 'Ultra Cute Cockatiel',
-        imgUrl: ''
-      },
-      {
-        order: 4,
-        headline: 'Crested Goshawk',
-        bodyText: 'Cool Crested Goshawk',
         imgUrl: ''
       }
     ]);
@@ -49,26 +31,8 @@ export const useModuleTemplateStandardImageAndDarkTextOverlay = defineStore(
       list.value = [
         {
           order: 1,
-          headline: 'Cat',
+          headline: 'Cat2',
           bodyText: 'Cute Cat',
-          imgUrl: ''
-        },
-        {
-          order: 2,
-          headline: 'Bird',
-          bodyText: 'Cute Bird',
-          imgUrl: ''
-        },
-        {
-          order: 3,
-          headline: 'Cockatiel',
-          bodyText: 'Ultra Cute Cockatiel',
-          imgUrl: ''
-        },
-        {
-          order: 4,
-          headline: 'Crested Goshawk',
-          bodyText: 'Cool Crested Goshawk',
           imgUrl: ''
         }
       ];

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex justify-between">
-      <h2 class="text-xl font-semibold">Standard Four Image & Text</h2>
+      <h2 class="text-xl font-semibold">Standard Image & Dark Text Overlay</h2>
       <button
         type="button"
         class="btn btn-circle leading-none w-7 h-7 m-1"
@@ -18,7 +18,7 @@
         <div>
           <input
             type="text"
-            class="input"
+            class="input w-full"
             v-model="store.headline"
             id="standardFourImageAndTextTempalteInput"
             placeholder="Enter headline text" />
@@ -28,7 +28,7 @@
 
     <h3 class="text-lg font-medium">Images</h3>
 
-    <ul class="grid grid-cols-4 gap-3" id="standardFourImageAndTextList">
+    <ul class="grid" id="standardImageAndDarkTextOverlay">
       <li v-for="(item, index) in store.list" :key="item.order">
         <div class="flex flex-col">
           <p class="text-lg">
@@ -60,7 +60,7 @@
               v-model="store.list[index].headline"
               type="text"
               placeholder="Type here"
-              class="input" />
+              class="input w-full" />
           </div>
           <div>
             <label for="bodyText1">
@@ -69,7 +69,7 @@
             <textarea
               v-model="store.list[index].bodyText"
               type="text"
-              class="textarea"
+              class="textarea w-full"
               id="bodyText1"
               placeholder="Enter body text"></textarea>
           </div>
@@ -79,9 +79,9 @@
   </div>
 </template>
 <script setup>
-import { useModuleTemplateStandardFourImageAndTextStore } from '~/stores/blockModules/moduleTemplateStandardFourImageAndText.js';
+import { useModuleTemplateStandardImageAndDarkTextOverlay } from '~/stores/blockModules/moduleTemplateStandardImageAndDarkTextOverlay.js';
 
-const store = useModuleTemplateStandardFourImageAndTextStore();
+const store = useModuleTemplateStandardImageAndDarkTextOverlay();
 const moduleListStore = useModuleListStore();
 
 const setImage = (imgUrl, imageIndex) => {

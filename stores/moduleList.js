@@ -4,6 +4,9 @@ import { ref, computed } from 'vue';
 import ModuleTemplateStandardFourImageAndText from '~/components/ModuleTemplate/ModuleTemplateStandardFourImageAndText.vue';
 
 import ModuleTemplateStandardImageAndTextOverlay from '~/components/ModuleTemplate/ModuleTemplateStandardImageAndDarkTextOverlay.vue';
+import ModulePreviewStandardFourImageAndText from '~/components/ModulePreview/ModulePreviewStandardFourImageAndText.vue';
+
+import ModulePreviewStandardImageAndDarkTextOverlay from '~/components/ModulePreview/ModulePreviewStandardImageAndDarkTextOverlay.vue';
 
 export const useModuleListStore = defineStore('moduleList', () => {
   const blocks = ref([
@@ -31,6 +34,12 @@ export const useModuleListStore = defineStore('moduleList', () => {
     StandardImageAndDarkTextOverlay: ModuleTemplateStandardImageAndTextOverlay
   };
 
+  const componentPreviewMap = {
+    StandardFourImageAndText: ModulePreviewStandardFourImageAndText,
+    StandardImageAndDarkTextOverlay:
+      ModulePreviewStandardImageAndDarkTextOverlay
+  };
+
   const currentSelectedModuleId = ref('');
 
   const moduleIdMapComponentName = computed(() => {
@@ -42,9 +51,23 @@ export const useModuleListStore = defineStore('moduleList', () => {
     return selectedBlock ? selectedBlock.componentName : null;
   });
 
-  const currentSelectedComponent = computed(
-    () => componentMap[moduleIdMapComponentName.value]
-  );
+  const currentSelectedComponent = computed(() => {
+    console.log(
+      'componentMap[moduleIdMapComponentName.value]',
+      componentMap[moduleIdMapComponentName.value]
+    );
+
+    return componentMap[moduleIdMapComponentName.value];
+  });
+
+  const currentSelectedComponentPreview = computed(() => {
+    console.log(
+      'componentPreviewMap[moduleIdMapComponentName.value]',
+      componentPreviewMap[moduleIdMapComponentName.value]
+    );
+
+    return componentPreviewMap[moduleIdMapComponentName.value];
+  });
 
   function selectModule(moduleId) {
     currentSelectedModuleId.value = moduleId;
@@ -52,11 +75,13 @@ export const useModuleListStore = defineStore('moduleList', () => {
 
   return {
     currentSelectedModuleId,
+
     blocks,
     searchInputValue,
     blocksFiltered,
     moduleIdMapComponentName,
     currentSelectedComponent,
+    currentSelectedComponentPreview,
     selectModule
   };
 });
