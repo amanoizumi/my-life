@@ -35,20 +35,22 @@
             Image
             <span v-show="index === 0">*</span>
           </p>
-          <div>
-            <div
-              v-if="!store.list[index].imgUrl"
-              class="border-black border-2 border-dashed bg-orange-300 mb-3 flex justify-center items-center aspect-square cursor-pointer"
-              role="button"
-              @click="store.list[index].uploadImage">
-              <p>Click to add image</p>
-            </div>
-            <div v-else class="border-transparent border-2 mb-3 aspect-square">
-              <img
-                :src="store.list[index].imgUrl"
-                class="w-full h-full object-cover"
-                alt="" />
-            </div>
+          <div class="mb-3">
+            <ImageUpload :image-index="index" @set-image="setImage">
+              <div
+                v-if="!store.list[index].imgUrl"
+                class="border-black border-2 border-dashed bg-orange-300 flex justify-center items-center aspect-square cursor-pointer text-center"
+                role="button"
+                @click="store.list[index].uploadImage">
+                <p>Click to add image</p>
+              </div>
+              <div v-else class="border-transparent border-2 aspect-square">
+                <img
+                  :src="store.list[index].imgUrl"
+                  class="w-full h-full object-cover"
+                  alt="" />
+              </div>
+            </ImageUpload>
           </div>
           <div class="mb-3">
             <label for="headInput1">
@@ -81,6 +83,12 @@ import { useModuleTemplateStandardFourImageAndTextStore } from '~/stores/blockMo
 
 const store = useModuleTemplateStandardFourImageAndTextStore();
 const moduleListStore = useModuleListStore();
+
+const setImage = (imgUrl, imageIndex) => {
+  console.log('imgUrl', imgUrl);
+  console.log('imageIndex', imageIndex);
+  store.list[imageIndex].imgUrl = imgUrl;
+};
 
 const closeEditor = () => {
   store.reset();
