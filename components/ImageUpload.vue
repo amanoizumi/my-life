@@ -5,7 +5,7 @@
       <div
         v-if="uploading"
         class="absolute inset-0 flex justify-center items-center bg-white/70 font-bold text-lg">
-        上傳中...
+        Uploading..
       </div>
       <input
         type="file"
