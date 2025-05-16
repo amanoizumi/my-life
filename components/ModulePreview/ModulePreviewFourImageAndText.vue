@@ -28,7 +28,7 @@
   </div>
 </template>
 <script setup>
-import { useModuleTemplateStandardFourImageAndTextStore } from '~/stores/blockModules/moduleTemplateStandardFourImageAndText.js';
+import { useModuleTemplateFourImageAndTextStore } from '~/stores/blockModules/moduleTemplateFourImageAndText.js';
 
-const store = useModuleTemplateStandardFourImageAndTextStore();
+const store = useModuleTemplateFourImageAndTextStore();
 </script>

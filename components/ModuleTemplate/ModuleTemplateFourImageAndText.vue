@@ -27,7 +27,7 @@
 
     <h3 class="text-lg font-medium">Images</h3>
 
-    <ul class="grid grid-cols-4 gap-3" id="standardFourImageAndTextList">
+    <ul class="grid grid-cols-4 gap-3" id="fourImageAndTextList">
       <li v-for="(item, index) in store.list" :key="item.order">
         <div class="flex flex-col">
           <p class="text-lg">
@@ -78,9 +78,9 @@
   </div>
 </template>
 <script setup>
-import { useModuleTemplateStandardFourImageAndTextStore } from '~/stores/blockModules/moduleTemplateStandardFourImageAndText.js';
+import { useModuleTemplateFourImageAndTextStore } from '~/stores/blockModules/moduleTemplateFourImageAndText.js';
 
-const store = useModuleTemplateStandardFourImageAndTextStore();
+const store = useModuleTemplateFourImageAndTextStore();
 const moduleListStore = useModuleListStore();
 
 const setImage = (imgUrl, imageIndex) => {

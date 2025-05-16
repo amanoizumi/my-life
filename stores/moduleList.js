@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 
-import ModuleTemplateStandardFourImageAndText from '~/components/ModuleTemplate/ModuleTemplateStandardFourImageAndText.vue';
+import ModuleTemplateFourImageAndText from '~/components/ModuleTemplate/ModuleTemplateFourImageAndText.vue';
 
-import ModulePreviewStandardFourImageAndText from '~/components/ModulePreview/ModulePreviewStandardFourImageAndText.vue';
+import ModulePreviewFourImageAndText from '~/components/ModulePreview/ModulePreviewFourImageAndText.vue';
 
 import ModuleTemplateBanner from '~/components/ModuleTemplate/ModuleTemplateBanner.vue';
 
@@ -14,7 +14,7 @@ export const useModuleListStore = defineStore('moduleList', () => {
     {
       id: 'cfa737e7-9c73-4def-b170-6f7bea6ee79f',
       title: 'Four Image & Text',
-      componentName: 'StandardFourImageAndText',
+      componentName: 'FourImageAndText',
       imageUrl:
         'https://firebasestorage.googleapis.com/v0/b/twbus-83dc6.appspot.com/o/images%2Fplayground%2F1747366129995-%E6%88%AA%E5%9C%96%202025-05-16%20%E4%B8%8A%E5%8D%8811.28.22.png?alt=media&token=79a899cd-a922-4274-9a8e-0a7236cf164c'
     },
@@ -31,12 +31,12 @@ export const useModuleListStore = defineStore('moduleList', () => {
   const blocksFiltered = ref([]);
 
   const componentMap = {
-    StandardFourImageAndText: ModuleTemplateStandardFourImageAndText,
+    FourImageAndText: ModuleTemplateFourImageAndText,
     Banner: ModuleTemplateBanner
   };
 
   const componentPreviewMap = {
-    StandardFourImageAndText: ModulePreviewStandardFourImageAndText,
+    FourImageAndText: ModulePreviewFourImageAndText,
     Banner: ModulePreviewBanner
   };
 
