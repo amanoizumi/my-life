@@ -33,6 +33,7 @@
     </section>
 
     <section
+    class="pointer-events-none"
       v-show="moduleListStore.currentSelectedModuleId && tab === 'Preview'">
       <component :is="moduleListStore.currentSelectedComponentPreview" />
     </section>
