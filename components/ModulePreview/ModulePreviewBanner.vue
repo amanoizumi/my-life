@@ -29,7 +29,7 @@
   </div>
 </template>
 <script setup>
-import { useModuleTemplateStandardImageAndDarkTextOverlay } from '~/stores/blockModules/moduleTemplateStandardImageAndDarkTextOverlay.js';
+import { useModuleTemplateBannerStore } from '~/stores/blockModules/moduleTemplateBanner.js';
 
-const store = useModuleTemplateStandardImageAndDarkTextOverlay();
+const store = useModuleTemplateBannerStore();
 </script>

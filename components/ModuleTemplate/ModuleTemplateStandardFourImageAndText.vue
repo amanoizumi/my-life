@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto px-4 mb-4">
     <div class="flex justify-between">
-      <h2 class="text-xl font-semibold">Standard Four Image & Text</h2>
+      <h2 class="text-xl font-semibold">Four Image & Text</h2>
       <button
         type="button"
         class="btn btn-circle leading-none w-7 h-7 m-1"

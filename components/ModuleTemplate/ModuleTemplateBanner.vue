@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex justify-between">
-      <h2 class="text-xl font-semibold">Standard Image & Dark Text Overlay</h2>
+      <h2 class="text-xl font-semibold">Banner</h2>
       <button
         type="button"
         class="btn btn-circle leading-none w-7 h-7 m-1"
@@ -101,9 +101,9 @@
   </div>
 </template>
 <script setup>
-import { useModuleTemplateStandardImageAndDarkTextOverlay } from '~/stores/blockModules/moduleTemplateStandardImageAndDarkTextOverlay.js';
+import { useModuleTemplateBannerStore } from '~/stores/blockModules/moduleTemplateBanner.js';
 
-const store = useModuleTemplateStandardImageAndDarkTextOverlay();
+const store = useModuleTemplateBannerStore();
 const moduleListStore = useModuleListStore();
 
 const setImage = (imgUrl, imageIndex) => {
