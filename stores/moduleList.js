@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 import ModuleTemplateStandardFourImageAndText from '~/components/ModuleTemplate/ModuleTemplateStandardFourImageAndText.vue';
+
+import ModuleTemplateStandardImageAndTextOverlay from '~/components/ModuleTemplate/ModuleTemplateStandardImageAndDarkTextOverlay.vue';
 
 export const useModuleListStore = defineStore('moduleList', () => {
   const blocks = ref([
@@ -14,15 +16,20 @@ export const useModuleListStore = defineStore('moduleList', () => {
     },
     {
       id: 'fe21d3f5-6449-487a-8624-d19069d73c3e',
-      title: 'Standard Image & Dark empty-moduleText Overlay',
-      componentName: 'StandardImageAndDarkEmptyModuleTextOverlay',
+      title: 'Standard Image & Dark Text Overlay',
+      componentName: 'StandardImageAndDarkTextOverlay',
       imageUrl:
         'https://plus.unsplash.com/premium_photo-1720380988344-1fce88bc53a6?q=80&w=2274&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     }
   ]);
 
+  const searchInputValue = ref('');
+  const blocksFiltered = ref([]);
+
   const componentMap = {
-    StandardFourImageAndText: ModuleTemplateStandardFourImageAndText
+    StandardFourImageAndText: ModuleTemplateStandardFourImageAndText,
+    StandardImageAndDarkEmptyModuleTextOverlay:
+      ModuleTemplateStandardImageAndTextOverlay
   };
 
   const currentSelectedModuleId = ref('');
@@ -47,6 +54,8 @@ export const useModuleListStore = defineStore('moduleList', () => {
   return {
     currentSelectedModuleId,
     blocks,
+    searchInputValue,
+    blocksFiltered,
     moduleIdMapComponentName,
     currentSelectedComponent,
     selectModule

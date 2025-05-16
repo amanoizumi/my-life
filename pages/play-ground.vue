@@ -1,6 +1,5 @@
 <template>
   <div class="pt-10 pb-32">
-    <ImageUpload />
     <section class="container mx-auto px-4 mb-4">
       <h2 class="text-3xl mb-4">Web Page Name - {{ webpageName }}</h2>
       <div class="tabs tabs-lift">

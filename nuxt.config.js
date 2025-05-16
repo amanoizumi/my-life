@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@vueuse/nuxt',
     'dayjs-nuxt',
-    'lodash-es'
+    'nuxt-lodash'
   ],
   devtools: { enabled: true },
   ssr: false,
