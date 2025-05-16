@@ -22,7 +22,9 @@ export const useModuleTemplateStandardImageAndDarkTextOverlay = defineStore(
         order: 1,
         headline: 'Cat2',
         bodyText: 'Cute Cat',
-        imgUrl: ''
+        imgUrl: '',
+        buttonText: 'Get Started',
+        buttonUrl: '/'
       }
     ]);
 
@@ -33,7 +35,9 @@ export const useModuleTemplateStandardImageAndDarkTextOverlay = defineStore(
           order: 1,
           headline: 'Cat2',
           bodyText: 'Cute Cat',
-          imgUrl: ''
+          imgUrl: '',
+          buttonText: 'Get Started',
+          buttonUrl: '/'
         }
       ];
     };

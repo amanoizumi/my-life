@@ -12,12 +12,17 @@
       }">
       <div class="hero-overlay"></div>
       <div class="hero-content text-neutral-content text-center">
-        <div class="max-w-md">
-          <h1 class="mb-5 text-5xl font-bold">{{ item.headline }}</h1>
-          <p class="mb-5">
+        <div class="max-w-md flex flex-col gap-y-5">
+          <h1 class="text-5xl font-bold">{{ item.headline }}</h1>
+          <p>
             {{ item.bodyText }}
           </p>
-          <button class="btn btn-primary">Get Started</button>
+          <a
+            v-if="item.buttonText"
+            :href="item.buttonUrl || '#'"
+            class="btn btn-primary">
+            {{ item.buttonText }}
+          </a>
         </div>
       </div>
     </div>

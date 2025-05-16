@@ -20,7 +20,6 @@
             type="text"
             class="input"
             v-model="store.headline"
-            id="standardFourImageAndTextTempalteInput"
             placeholder="Enter headline text" />
         </div>
       </form>
