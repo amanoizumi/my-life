@@ -3,6 +3,8 @@ import { ref } from 'vue';
 
 import ModuleTemplateStandardFourImageAndText from '~/components/ModuleTemplate/ModuleTemplateStandardFourImageAndText.vue';
 
+import ModuleTemplateStandardImageAndDarkEmptyModuleTextOverlay from '~/components/ModuleTemplate/ModuleTemplateStandardImageAndDarkEmptyModuleTextOverlay.vue';
+
 export const useModuleListStore = defineStore('moduleList', () => {
   const blocks = ref([
     {
@@ -22,7 +24,9 @@ export const useModuleListStore = defineStore('moduleList', () => {
   ]);
 
   const componentMap = {
-    StandardFourImageAndText: ModuleTemplateStandardFourImageAndText
+    StandardFourImageAndText: ModuleTemplateStandardFourImageAndText,
+    StandardImageAndDarkEmptyModuleTextOverlay:
+      ModuleTemplateStandardImageAndDarkEmptyModuleTextOverlay
   };
 
   const currentSelectedModuleId = ref('');
