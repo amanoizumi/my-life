@@ -74,16 +74,12 @@ export const useModuleTemplateStandardFourImageAndTextStore = defineStore(
       ];
     };
 
-    const uploadImage = () => {
-      console.log('uploadImage');
-    };
     return {
       // state
       headline,
       list,
 
       // method
-      uploadImage,
       reset
     };
   }

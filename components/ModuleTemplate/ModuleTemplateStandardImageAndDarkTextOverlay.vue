@@ -85,8 +85,6 @@ const store = useModuleTemplateStandardFourImageAndTextStore();
 const moduleListStore = useModuleListStore();
 
 const setImage = (imgUrl, imageIndex) => {
-  console.log('imgUrl', imgUrl);
-  console.log('imageIndex', imageIndex);
   store.list[imageIndex].imgUrl = imgUrl;
 };
 

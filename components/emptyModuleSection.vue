@@ -31,12 +31,17 @@
               <path d="m21 21-4.3-4.3"></path>
             </g>
           </svg>
-          <input v-model="searchInputValue" required placeholder="Search" />
+          <input
+            v-model="moduleListStore.searchInputValue"
+            required
+            placeholder="Search" />
         </label>
 
-        <div class="grid grid-cols-2 gap-4">
+        <div
+          class="grid grid-cols-2 gap-4"
+          v-if="moduleListStore.blocksFiltered.length">
           <div
-            v-for="block in moduleListStore.blocks"
+            v-for="block in moduleListStore.blocksFiltered"
             :key="block.id"
             class="rounded-lg overflow-hidden border-2 duration-100"
             :class="[
@@ -65,6 +70,8 @@
           </div>
         </div>
 
+        <p v-else>No matching results found.</p>
+
         <div class="modal-action">
           <button
             class="btn btn-primary"
@@ -82,11 +89,9 @@
 </template>
 
 <script setup>
-import { debounce } from 'lodash-es';
 const moduleListStore = useModuleListStore();
 const modalRef = ref(null);
 const moduleRadioValue = ref('');
-const searchInputValue = ref('');
 
 const openModal = () => {
   modalRef.value.showModal();
@@ -102,11 +107,23 @@ const submit = () => {
   closeModal();
 };
 
-const doSearch = debounce((val) => {
-  console.log('觸發搜尋：', val);
+const doSearch = useDebounce((val) => {
+  const filtered = val
+    ? moduleListStore.blocks.filter((block) =>
+        block.title.toLowerCase().includes(val.toLowerCase())
+      )
+    : [...moduleListStore.blocks];
+
+  moduleListStore.blocksFiltered = filtered;
 }, 500);
 
-watch(searchInputValue, (newVal) => {
-  doSearch(newVal);
-});
+watch(
+  () => moduleListStore.searchInputValue,
+  (newVal) => {
+    doSearch(newVal);
+  },
+  {
+    immediate: true
+  }
+);
 </script>
