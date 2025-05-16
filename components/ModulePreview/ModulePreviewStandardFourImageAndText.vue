@@ -10,7 +10,10 @@
              
             <img
               class="w-full h-full aspect-square object-cover"
-              :src="item.imgUrl"
+              :src="
+                item.imgUrl ||
+                'https://skytechai.s3.us-west-002.backblazeb2.com/uy415b93xzq6ez8ejbuf02kezyxt_websitenoimages02jpgjpg.jpg'
+              "
               alt="Shoes" />
           </figure>
           <div class="card-body">

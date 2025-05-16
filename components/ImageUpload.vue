@@ -1,14 +1,18 @@
 <template>
-  <div class="image-upload">
-    <input
-      type="file"
-      accept="image/*"
-      @change="handleFileUpload"
-      class="file-input" />
-    <div v-if="uploading" class="upload-status">上傳中...</div>
-    <div v-if="imageUrl" class="preview">
-      <img :src="imageUrl" alt="上傳的圖片" />
-    </div>
+  <div>
+    <label class="relative cursor-pointer">
+      <slot></slot>
+      <div
+        v-if="uploading"
+        class="absolute inset-0 flex justify-center items-center bg-white/70 font-bold text-lg">
+        Uploading..
+      </div>
+      <input
+        type="file"
+        accept="image/*"
+        @change="handleFileUpload"
+        class="hidden" />
+    </label>
   </div>
 </template>
 
@@ -19,6 +23,15 @@ import {
   uploadBytes,
   getDownloadURL
 } from 'firebase/storage';
+
+const props = defineProps({
+  imageIndex: {
+    type: [String, Number],
+    default: null
+  }
+});
+
+const emit = defineEmits(['set-image']);
 
 const { $storage } = useNuxtApp();
 const uploading = ref(false);
@@ -38,8 +51,9 @@ const handleFileUpload = async (event) => {
     const snapshot = await uploadBytes(imageRef, file);
     const url = await getDownloadURL(snapshot.ref);
     imageUrl.value = url;
+    emit('set-image', url, props.imageIndex);
   } catch (error) {
-    console.error('上傳失敗:', error);
+    console.error('Failed to upload.', error);
   } finally {
     uploading.value = false;
   }
@@ -47,14 +61,6 @@ const handleFileUpload = async (event) => {
 </script>
 
 <style scoped>
-.image-upload {
-  padding: 1rem;
-}
-
-.file-input {
-  margin-bottom: 1rem;
-}
-
 .preview {
   max-width: 300px;
   margin-top: 1rem;
@@ -64,10 +70,5 @@ const handleFileUpload = async (event) => {
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
-}
-
-.upload-status {
-  color: #666;
-  margin: 0.5rem 0;
 }
 </style>

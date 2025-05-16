@@ -11,7 +11,13 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()]
   },
   css: ['~/assets/css/main.css'],
-  modules: ['@pinia/nuxt', '@nuxt/icon', '@vueuse/nuxt', 'dayjs-nuxt'],
+  modules: [
+    '@pinia/nuxt',
+    '@nuxt/icon',
+    '@vueuse/nuxt',
+    'dayjs-nuxt',
+    'lodash-es'
+  ],
   devtools: { enabled: true },
   ssr: false,
   runtimeConfig: {
