@@ -20,7 +20,7 @@ export const useModuleTemplateStandardImageAndDarkTextOverlay = defineStore(
     const list = ref([
       {
         order: 1,
-        headline: 'Cat2',
+        headline: 'Headline',
         bodyText: 'Cute Cat',
         imgUrl: '',
         buttonText: 'Get Started',
@@ -33,7 +33,7 @@ export const useModuleTemplateStandardImageAndDarkTextOverlay = defineStore(
       list.value = [
         {
           order: 1,
-          headline: 'Cat2',
+          headline: 'Headline',
           bodyText: 'Cute Cat',
           imgUrl: '',
           buttonText: 'Get Started',

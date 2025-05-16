@@ -22,7 +22,7 @@ export const useModuleListStore = defineStore('moduleList', () => {
       title: 'Standard Image & Dark Text Overlay',
       componentName: 'StandardImageAndDarkTextOverlay',
       imageUrl:
-        'https://plus.unsplash.com/premium_photo-1720380988344-1fce88bc53a6?q=80&w=2274&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        'https://firebasestorage.googleapis.com/v0/b/twbus-83dc6.appspot.com/o/images%2Fplayground%2F1747385399127-%E6%88%AA%E5%9C%96%202025-05-16%20%E4%B8%8B%E5%8D%884.49.46.png?alt=media&token=de13a39f-b6e3-4325-8a32-63154086e193'
     }
   ]);
 
