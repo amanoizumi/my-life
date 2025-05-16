@@ -10,16 +10,15 @@ export const useModuleListStore = defineStore('moduleList', () => {
       title: 'Standard Four Image & Text',
       componentName: 'StandardFourImageAndText',
       imageUrl:
-        'https://images.unsplash.com/photo-1746471626032-d5dd71f0ba9c?q=80&w=2282&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        'https://firebasestorage.googleapis.com/v0/b/twbus-83dc6.appspot.com/o/images%2Fplayground%2F1747366129995-%E6%88%AA%E5%9C%96%202025-05-16%20%E4%B8%8A%E5%8D%8811.28.22.png?alt=media&token=79a899cd-a922-4274-9a8e-0a7236cf164c'
+    },
+    {
+      id: 'fe21d3f5-6449-487a-8624-d19069d73c3e',
+      title: 'Standard Image & Dark empty-moduleText Overlay',
+      componentName: 'StandardImageAndDarkEmptyModuleTextOverlay',
+      imageUrl:
+        'https://plus.unsplash.com/premium_photo-1720380988344-1fce88bc53a6?q=80&w=2274&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     }
-    // ,
-    // {
-    //   id: 'fe21d3f5-6449-487a-8624-d19069d73c3e',
-    //   title: 'Standard Image & Dark empty-moduleText Overlay',
-    //   componentName: 'StandardImageAndDarkEmptyModuleTextOverlay',
-    //   imageUrl:
-    //     'https://plus.unsplash.com/premium_photo-1720380988344-1fce88bc53a6?q=80&w=2274&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    // }
   ]);
 
   const componentMap = {

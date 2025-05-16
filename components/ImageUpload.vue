@@ -53,7 +53,7 @@ const handleFileUpload = async (event) => {
     imageUrl.value = url;
     emit('set-image', url, props.imageIndex);
   } catch (error) {
-    console.error('上傳失敗:', error);
+    console.error('Failed to upload.', error);
   } finally {
     uploading.value = false;
   }
