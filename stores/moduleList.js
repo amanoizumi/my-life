@@ -28,8 +28,7 @@ export const useModuleListStore = defineStore('moduleList', () => {
 
   const componentMap = {
     StandardFourImageAndText: ModuleTemplateStandardFourImageAndText,
-    StandardImageAndDarkEmptyModuleTextOverlay:
-      ModuleTemplateStandardImageAndTextOverlay
+    StandardImageAndDarkTextOverlay: ModuleTemplateStandardImageAndTextOverlay
   };
 
   const currentSelectedModuleId = ref('');
