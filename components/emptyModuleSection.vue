@@ -98,10 +98,7 @@ const closeModal = () => {
 
 const submit = () => {
   moduleListStore.currentSelectedModuleId = moduleRadioValue.value;
-  console.log(
-    'moduleListStore.currentSelectedModuleId',
-    moduleListStore.currentSelectedModuleId
-  );
+
   closeModal();
 };
 
