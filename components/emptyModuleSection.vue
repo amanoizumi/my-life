@@ -31,7 +31,7 @@
               <path d="m21 21-4.3-4.3"></path>
             </g>
           </svg>
-          <input type="search" required placeholder="Search" />
+          <input v-model="searchInputValue" required placeholder="Search" />
         </label>
 
         <div class="grid grid-cols-2 gap-4">
@@ -82,9 +82,11 @@
 </template>
 
 <script setup>
+import { debounce } from 'lodash-es';
 const moduleListStore = useModuleListStore();
 const modalRef = ref(null);
 const moduleRadioValue = ref('');
+const searchInputValue = ref('');
 
 const openModal = () => {
   modalRef.value.showModal();
@@ -98,4 +100,12 @@ const submit = () => {
   moduleListStore.currentSelectedModuleId = moduleRadioValue.value;
   closeModal();
 };
+
+const doSearch = debounce((val) => {
+  console.log('觸發搜尋：', val);
+}, 500);
+
+watch(searchInputValue, (newVal) => {
+  doSearch(newVal);
+});
 </script>
