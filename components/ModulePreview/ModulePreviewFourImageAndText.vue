@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container mx-auto px-4 mb-4">
     <h2 class="font-bold text-2xl mb-3">
       {{ store.headline }}
     </h2>
@@ -28,7 +28,7 @@
   </div>
 </template>
 <script setup>
-import { useModuleTemplateStandardFourImageAndTextStore } from '~/stores/blockModules/moduleTemplateStandardFourImageAndText.js';
+import { useModuleTemplateFourImageAndTextStore } from '~/stores/blockModules/moduleTemplateFourImageAndText.js';
 
-const store = useModuleTemplateStandardFourImageAndTextStore();
+const store = useModuleTemplateFourImageAndTextStore();
 </script>

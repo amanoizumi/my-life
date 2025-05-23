@@ -1,28 +1,43 @@
 import { defineStore } from 'pinia';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
-import ModuleTemplateStandardFourImageAndText from '~/components/ModuleTemplate/ModuleTemplateStandardFourImageAndText.vue';
+import ModuleTemplateFourImageAndText from '~/components/ModuleTemplate/ModuleTemplateFourImageAndText.vue';
+
+import ModulePreviewFourImageAndText from '~/components/ModulePreview/ModulePreviewFourImageAndText.vue';
+
+import ModuleTemplateBanner from '~/components/ModuleTemplate/ModuleTemplateBanner.vue';
+
+import ModulePreviewBanner from '~/components/ModulePreview/ModulePreviewBanner.vue';
 
 export const useModuleListStore = defineStore('moduleList', () => {
   const blocks = ref([
     {
       id: 'cfa737e7-9c73-4def-b170-6f7bea6ee79f',
-      title: 'Standard Four Image & Text',
-      componentName: 'StandardFourImageAndText',
+      title: 'Four Image & Text',
+      componentName: 'FourImageAndText',
       imageUrl:
-        'https://firebasestorage.googleapis.com/v0/b/twbus-83dc6.appspot.com/o/images%2Fplayground%2F1747366129995-%E6%88%AA%E5%9C%96%202025-05-16%20%E4%B8%8A%E5%8D%8811.28.22.png?alt=media&token=79a899cd-a922-4274-9a8e-0a7236cf164c'
+        'https://firebasestorage.googleapis.com/v0/b/twbus-83dc6.appspot.com/o/images%2Fplayground%2F1747978439009-%E6%88%AA%E5%9C%96%202025-05-23%20%E4%B8%8B%E5%8D%881.33.45.png?alt=media&token=c4025007-c54c-4a34-aed7-aea1d5d917b0'
     },
     {
       id: 'fe21d3f5-6449-487a-8624-d19069d73c3e',
-      title: 'Standard Image & Dark empty-moduleText Overlay',
-      componentName: 'StandardImageAndDarkEmptyModuleTextOverlay',
+      title: 'Banner',
+      componentName: 'Banner',
       imageUrl:
-        'https://plus.unsplash.com/premium_photo-1720380988344-1fce88bc53a6?q=80&w=2274&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        'https://firebasestorage.googleapis.com/v0/b/twbus-83dc6.appspot.com/o/images%2Fplayground%2F1747385399127-%E6%88%AA%E5%9C%96%202025-05-16%20%E4%B8%8B%E5%8D%884.49.46.png?alt=media&token=de13a39f-b6e3-4325-8a32-63154086e193'
     }
   ]);
 
+  const searchInputValue = ref('');
+  const blocksFiltered = ref([]);
+
   const componentMap = {
-    StandardFourImageAndText: ModuleTemplateStandardFourImageAndText
+    FourImageAndText: ModuleTemplateFourImageAndText,
+    Banner: ModuleTemplateBanner
+  };
+
+  const componentPreviewMap = {
+    FourImageAndText: ModulePreviewFourImageAndText,
+    Banner: ModulePreviewBanner
   };
 
   const currentSelectedModuleId = ref('');
@@ -36,9 +51,13 @@ export const useModuleListStore = defineStore('moduleList', () => {
     return selectedBlock ? selectedBlock.componentName : null;
   });
 
-  const currentSelectedComponent = computed(
-    () => componentMap[moduleIdMapComponentName.value]
-  );
+  const currentSelectedComponent = computed(() => {
+    return componentMap[moduleIdMapComponentName.value];
+  });
+
+  const currentSelectedComponentPreview = computed(() => {
+    return componentPreviewMap[moduleIdMapComponentName.value];
+  });
 
   function selectModule(moduleId) {
     currentSelectedModuleId.value = moduleId;
@@ -46,9 +65,13 @@ export const useModuleListStore = defineStore('moduleList', () => {
 
   return {
     currentSelectedModuleId,
+
     blocks,
+    searchInputValue,
+    blocksFiltered,
     moduleIdMapComponentName,
     currentSelectedComponent,
+    currentSelectedComponentPreview,
     selectModule
   };
 });

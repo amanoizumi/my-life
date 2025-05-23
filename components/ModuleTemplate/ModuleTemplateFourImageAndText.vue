@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="container mx-auto px-4 mb-4">
     <div class="flex justify-between">
-      <h2 class="text-xl font-semibold">Standard Four Image & Text</h2>
+      <h2 class="text-xl font-semibold">Four Image & Text</h2>
       <button
         type="button"
         class="btn btn-circle leading-none w-7 h-7 m-1"
@@ -20,7 +20,6 @@
             type="text"
             class="input"
             v-model="store.headline"
-            id="standardFourImageAndTextTempalteInput"
             placeholder="Enter headline text" />
         </div>
       </form>
@@ -28,7 +27,7 @@
 
     <h3 class="text-lg font-medium">Images</h3>
 
-    <ul class="grid grid-cols-4 gap-3" id="standardFourImageAndTextList">
+    <ul class="grid grid-cols-4 gap-3" id="fourImageAndTextList">
       <li v-for="(item, index) in store.list" :key="item.order">
         <div class="flex flex-col">
           <p class="text-lg">
@@ -64,12 +63,12 @@
           </div>
           <div>
             <label for="bodyText1">
-              <h3 class="text-lg font-medium">Body Text</h3>
+              <h3 class="text-lg font-medium w-full">Body Text</h3>
             </label>
             <textarea
               v-model="store.list[index].bodyText"
               type="text"
-              class="textarea"
+              class="textarea w-full"
               id="bodyText1"
               placeholder="Enter body text"></textarea>
           </div>
@@ -79,14 +78,12 @@
   </div>
 </template>
 <script setup>
-import { useModuleTemplateStandardFourImageAndTextStore } from '~/stores/blockModules/moduleTemplateStandardFourImageAndText.js';
+import { useModuleTemplateFourImageAndTextStore } from '~/stores/blockModules/moduleTemplateFourImageAndText.js';
 
-const store = useModuleTemplateStandardFourImageAndTextStore();
+const store = useModuleTemplateFourImageAndTextStore();
 const moduleListStore = useModuleListStore();
 
 const setImage = (imgUrl, imageIndex) => {
-  console.log('imgUrl', imgUrl);
-  console.log('imageIndex', imageIndex);
   store.list[imageIndex].imgUrl = imgUrl;
 };
 

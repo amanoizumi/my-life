@@ -1,22 +1,21 @@
 <template>
   <div class="pt-10 pb-32">
-    <ImageUpload />
     <section class="container mx-auto px-4 mb-4">
       <h2 class="text-3xl mb-4">Web Page Name - {{ webpageName }}</h2>
       <div class="tabs tabs-lift">
         <input
           type="radio"
-          v-model="tab"
+          v-model="editorPreviewTab"
           value="Editor"
-          name="editorTab"
+          name="editorPreviewTab"
           class="tab"
           aria-label="Editor"
           checked="checked" />
         <input
-          v-model="tab"
+          v-model="editorPreviewTab"
           value="Preview"
           type="radio"
-          name="editorTab"
+          name="editorPreviewTab"
           class="tab"
           aria-label="Preview" />
       </div>
@@ -29,14 +28,17 @@
     <section
       class="container mx-auto px-4 mb-4"
       v-if="moduleListStore.currentSelectedModuleId"
-      v-show="tab === 'Editor'">
+      v-show="editorPreviewTab === 'Editor'">
       <component :is="moduleListStore.currentSelectedComponent" />
     </section>
 
     <section
-      class="container mx-auto px-4 mb-4"
-      v-show="moduleListStore.currentSelectedModuleId && tab === 'Preview'">
-      <ModulePreviewStandardFourImageAndText />
+      class="pointer-events-none"
+      v-show="
+        moduleListStore.currentSelectedModuleId &&
+        editorPreviewTab === 'Preview'
+      ">
+      <component :is="moduleListStore.currentSelectedComponentPreview" />
     </section>
   </div>
 </template>
@@ -46,11 +48,11 @@ import { useStorage } from '@vueuse/core';
 import { storeToRefs } from 'pinia';
 
 const moduleListStore = useModuleListStore();
-const webpageName = ref('Animal Fes');
-const tab = ref('Editor');
+const webpageName = ref('Here is WebPage Name');
+const editorPreviewTab = ref('Editor');
 
 const toggleTab = (tabName = 'Editor') => {
-  tab.value = tabName;
+  editorPreviewTab.value = tabName;
 };
 
 const now = useNow({
